@@ -50,6 +50,12 @@ function enterCity(event) {
     let wind = Math.round(windSpeed);
     let windValue = document.querySelector("#wind");
     windValue.innerHTML = `${wind} km/hr`;
+    let iconElement = document.querySelector("#icon");
+    iconElement.setAttribute(
+      "src",
+      `http://openweathermap.org/img/wn/${response.data.weather[0].icon}@2x.png`
+    );
+    iconElement.setAttribute("alt", response.data.weather[0].description);
   }
   axios.get(`${apiUrl}`).then(showTemperature);
 }
