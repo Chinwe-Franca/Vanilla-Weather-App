@@ -35,11 +35,11 @@ function enterCity(event) {
 
   function showTemperature(response) {
     let cityTemperature = response.data.main.temp;
-    console.log(cityTemperature);
+
     let cityTemp = Math.round(cityTemperature);
     let number = document.querySelector("#number");
     number.innerHTML = `${cityTemp}`;
-    console.log(response.data.weather[0].description);
+
     let weatherDescription = response.data.weather[0].description;
     let h2 = document.querySelector("#description");
     h2.innerHTML = `${weatherDescription}`;
